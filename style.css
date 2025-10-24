@@ -1,188 +1,225 @@
+/* ===== VARIABLES CSS ===== */
+:root{
+  /*Paleta de colores*/
+  --color-primario: #DFDED6;/*Fondo general*/
+  --color-secundario: #0D3B66;/*Header, footer, títulos importantes*/
+  --color-terciario: #ffffff; /* Secciones, tarjetas */
+  --color-acento: #f95738;/* Botones, enlaces importantes */
+
+  /*Tipografia y tamaños*/
+  --fuente-principal: 'Inter', sans-serif;
+  --h1-size: 32px;
+  --h1-weight:700;
+
+  --h2-size: 24px;
+  --h2-weight: 600;
+
+  --body-size: 16px;
+  --body-weight: 400;
+
+  --small-size: 14px;
+  --small-weight: 300;
+
+   /* Espaciados */
+  --padding-general: 20px;
+  --margin-general: 20px;
+  --radio-bordes: 10px;
+  --shadow-cards: 0 4px 10px rgba(0,0,0,0.1);
+  --shadow-img: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+/* ===== General ===== */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #DFDED6;
+body{
+  font-family: var(--fuente-principal);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  background-color: var(--color-primario);
+  color:var(--color-secundario)
 }
 
-/* ======== HEADER ======== */
-header {
+/* ===== HEADER ===== */
+header{
   display: flex;
-  /* Colocar logo y menú en línea */
   justify-content: space-between;
-  /* Logo izquierda, menú derecha */
   align-items: center;
-  /* Centrar verticalmente */
-  background-color: #0D3B66;
-  padding: 10px 40px;
-  color: white;
+  background-color: var(--color-secundario);
+  padding: var(--padding-general) 40px;
+  color: var(--color-terciario);
 }
 
 
-/* ======== LOGOTIPO ======== */
-header img {
+header img{
   height: 100px;
-  /* Tamaño del logotipo */
   width: auto;
-
 }
 
-/* ======== NAVBAR ======== */
-nav ul {
+nav ul{
   list-style: none;
-  /* Quitar puntos de lista */
-  margin: 0;
-  padding: 0;
   display: flex;
-  /* Alinear los elementos del menú en fila */
   gap: 20px;
-  /* Espacio entre enlaces */
 }
 
-nav a {
-  color: white;
+nav a{
+  color: var(--color-terciario);
   text-decoration: none;
-  /* Quita el subrayado */
-  font-weight: bold;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
+nav a:hover{
+  color: var(--color-acento);
+}
 
-/*========= TITULO CENTRAL =======*/
-#titulo-nombre {
+/* ===== TITULO CENTRAL ===== */
+#titulo-nombre{
   text-align: center;
-  color: #0D3B66;
-  background-color: white;
+  color: var(--color-secundario);
+  background-color: var(--color-terciario);
   padding: 40px;
-
 }
 
-#titulo-nombre img {
+#titulo-nombre h1{
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+}
+
+#titulo-nombre h2{
+  font-size: var(--h2-size);
+  font-size: var(--h2-weight);
+  padding: 5px;
+}
+
+#titulo-nombre img{
   width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 20%;
-  border: 6px solid #0D3B66;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-
+  border: 6px solid var(--color-secundario);
+  box-shadow: var(--shadow-img);
 }
 
-/*======= SECCION SOBRE MI=======*/
-.sobre_mi {
+/* ===== SOBRE MI ===== */
+.sobre_mi{
   display: flex;
-  text-align: left;
-  /* Centrar verticalmente ambos elementos */
   gap: 20px;
-  /* Espacio entre la imagen y el texto */
   padding: 20px;
   max-width: 1000px;
-  /* Ancho máximo para centrar contenido */
   margin: 40px auto;
-  /* Centrar horizontalmente en la página */
   justify-content: space-between;
-
 }
 
-.sobremi-img {
+.sobre_mi img{
   width: 200px;
   height: 200px;
   border-radius: 50%;
-
+  
 }
 
-.sobremi-text {
+.sobremi-text{
   flex: 1;
+
 }
 
-.sobremi-text h1 {
+.sobremi-text h1{
   margin-top: 0;
-  color: #0D3B66;
+  font-size: var(--h1-size);
+  font-weight:var(--h1-weight);
+  color: var(--color-secundario);
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.sobremi-text p {
-  color: #333;
-  line-height: 2;
+.sobremi-text p{
+  line-height: 1.6;
   text-align: justify;
 }
 
-/*======= PROYECTOS - CARDS =======*/
+/* ===== PROYECTOS ===== */
 #proyectos {
   padding: 40px;
 }
 
-#titulo-tarjeta h1 {
+#titulo-tarjeta h1{
   text-align: center;
-  color: #0D3B66;
-  font-size: 2em;
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  color: var(--color-secundario);
   margin-bottom: 30px;
 }
 
-.cards-container {
+.cards-container{
   display: flex;
   justify-content: center;
-  /* Centrar horizontalmente las tarjetas */
   gap: 20px;
   flex-wrap: wrap;
-  /* Permitir que las tarjetas bajen a otra fila si la pantalla es pequeña */
 }
 
-.card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.card{
+  background-color: var(--color-terciario);
+  border-radius: var(--radio-bordes);
+  box-shadow: var(--shadow-cards);
   width: 300px;
   padding: 15px;
   text-align: center;
-  /* Centrar contenido de cada tarjeta */
-
 }
 
-.card img {
+.card img{
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
-
-
 }
 
-.card h3 {
+.card h3{
   margin: 10px 0 5px 0;
-  color: #0D3B66;
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  color: var(--color-secundario);
 }
 
-.card p {
-  font-size: 0.95em;
-  color: #0D3B66;
+.card p{
+  font-size: var(--small-size);
+  font-weight: var(--small-size);
+  color: var(--color-secundario);
 }
 
-.btn-vermas {
+.btn-vermas{
   display: inline-block;
   margin-top: 10px;
   padding: 8px 15px;
-  background-color: #f95738;
-  color: white;
+  background-color: var(--color-acento);
+  color: var(--color-terciario);
   border: none;
   border-radius: 8px;
   text-decoration: none;
   cursor: pointer;
-  
+  transition: 0.3s;
 }
 
-/*======= CONTACTO =======*/
-#contacto {
-  padding: 50px 20px;
-  
+.btn-vermas:hover{
+  background-color:var(--color-secundario);
 }
 
-#titulo-contacto h1 {
+/* ===== CONTACTO ===== */
+#contacto{
+  padding:var(--padding-general);
+}
+
+#titulo-contacto h1{
   text-align: center;
-  color: #0D3B66;
-  font-size: 2em;
-  margin-bottom: 30px;
+  font-size: var(--h1-size);
+  font-weight: var(--h2-weight);
+  color: var(--color-secundario);
+  margin-top: 30px;
+  padding: var(--padding-general);
+
 }
 
 .contact-container {
@@ -192,50 +229,110 @@ nav a {
   flex-wrap: wrap;
   max-width: 1000px;
   margin: 0 auto;
+  
 }
 
 .contact-info {
   flex: 1;
   min-width: 250px;
-  color: #333;
-  font-size: 1em;
-}
-
-.contact-info p {
-  margin-bottom: 15px;
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  color: var(--color-secundario);
   text-align: center;
 }
 
-
-
-
-
-
-/*======= FOOTER =======*/
-footer {
-  background-color: #0D3B66;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
-  font-family: 'Poppins', sans-serif;
+.contact-info p{
+  margin-bottom: 5px;
 }
 
-footer p {
+
+/* ===== FOOTER ===== */
+footer{
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+  text-align: center;
+  padding: var(--padding-general);
+  margin-top: var(--margin-general);
+
+}
+
+footer p{
   margin-bottom: 12px;
-  font-size: 0.95em;
-  letter-spacing: 0.5px;
+  font-size: var(--body-size);
+
 }
 
-.social-icons {
+.social-icons{
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.social-icons img {
-  width: 32px;
-  height: 32px;
+.social-icons img{
+  width: 50px;
+  height: 50px;
+}
+
+
+/* ===== DISEÑO RESPONSIVE ===== */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .sobre_mi {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cards-container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #titulo-nombre img{
+    width: 200px;
+    height: 200px;
+  }
   
 }
 
+/* Movil  */
+@media screen and (max-width: 768px) {
+  header{
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+  }
+
+   nav li {
+    margin: 0;
+  }
+
+  #titulo-nombre h1{
+    font-size: 28px;
+  }
+
+  #titulo-nombre h2{
+    font-size: 20px;
+  }
+
+  .card{
+    width: 90%;
+  }
+
+  .contact-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+}
